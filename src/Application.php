@@ -30,11 +30,23 @@ class Application
         $this->router = $router ?: new HttpRouter;
     }
 
+    /**
+     * Returns our injector
+     *
+     * @return \Auryn\Injector [description]
+     */
     public function getInjector()
     {
         return $this->injector;
     }
 
+    /**
+     * Run application agains a provided request
+     * or create a new one
+     *
+     * @param  Request|null $request [description]
+     * @return [type]                [description]
+     */
     public function run(Request $request = NULL)
     {
         if (!is_null($request)) {
@@ -66,12 +78,6 @@ class Application
                     $this->response->setStatusCode(405);
                     break;
                 case \FastRoute\Dispatcher::FOUND:
-                    // $className = $dispatched[1][0];
-                    // $method = $dispatched[1][1];
-                    // $vars = $dispatched[2];
-
-                    // $class = $this->injector->make($className);
-                    // $class->$method($vars);
                     $handler = $dispatched[1];
                     $vars = $dispatched[2];
                     $this->call($handler, $vars);
@@ -83,7 +89,6 @@ class Application
         catch (\Exception $e) {
             echo $e->getMessage(); die;
         }
-        
     }
 
     /**
