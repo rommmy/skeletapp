@@ -1,0 +1,25 @@
+{
+    "name": "Skeletapp",
+    "description": "Base skeleton for app development",
+    "keywords": ["Skeleton", "PHP"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Romain Alcantara",
+            "email": "rom.1337@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+	"filp/whoops": ">=1.1.2",
+	"symfony/http-foundation": "~2.3,<3.0",
+        "nikic/fast-route": "^0.6.0",
+        "rdlowrey/auryn": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Skeletapp\\": "src/"
+        }
+    }
+}
