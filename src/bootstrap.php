@@ -2,7 +2,6 @@
 
 /**
  * Application bootstraping
- *
  */
 
 namespace Skeletapp;
@@ -16,7 +15,7 @@ error_reporting(E_ALL | E_STRICT);
 date_default_timezone_set(ini_get('date.timezone') ?: 'UTC');
 
 if (!defined('APP_ROOT_PATH')) {
-    define('APP_ROOT_PATH', __DIR__ . '/../');
+    define('APP_ROOT_PATH', __DIR__ . '/..');
 }
 
 if (!defined('APP_ENVIRONNEMENT')) {

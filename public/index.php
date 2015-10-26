@@ -10,8 +10,10 @@ $loader = new ModuleLoader;
 
 $app = new Application($injector);
 
-foreach (['RoutingModule'] as $module) {
+foreach (['RenderingModule'] as $module) {
     $loader->load($app, $module);
 }
+
+require __DIR__ . '/../src/routes.php';
 
 $app->run();
